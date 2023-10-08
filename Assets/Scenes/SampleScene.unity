@@ -263,6 +263,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4747935329252104208, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.18216887
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747935329252104208, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5660378
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747935329252104208, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
+      propertyPath: m_Color.r
+      value: 0.088109665
+      objectReference: {fileID: 0}
     - target: {fileID: 5066959539286535780, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
       propertyPath: m_Name
       value: Capsule
