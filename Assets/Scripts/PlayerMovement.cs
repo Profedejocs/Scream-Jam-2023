@@ -7,16 +7,20 @@ public class PlayerMovement : MonoBehaviour
     public float PlayerAccel;
     public float JumpCooldown;
     public float JumpForce;
+    public float JumpCharge;
 
     private Rigidbody2D _rigidbody;
+    private Collider2D _collider;
     private float _jumpCooldown;
     private bool _grounded;
     private Vector2 _velocity;
+    private float _jumpCharge;
 
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<CapsuleCollider2D>();
         _velocity = new Vector2();
 
     }
@@ -32,12 +36,18 @@ public class PlayerMovement : MonoBehaviour
 
         UpdateCounters();
 
-        if (!_grounded)
+        if (!_grounded || _jumpCooldown > 0)
+        {
             _rigidbody.sharedMaterial.friction = 0.0f;
+            _collider.sharedMaterial.friction = 0.0f;
+            ColliderBugWorkaround();
+        }
         else
+        {
             _rigidbody.sharedMaterial.friction = 0.4f;
-
-        Debug.Log(_rigidbody.sharedMaterial.friction);
+            _collider.sharedMaterial.friction = 0.4f;
+            ColliderBugWorkaround();
+        }
 
         _rigidbody.velocity = Vector2.Lerp(_rigidbody.velocity, (new Vector2(accel.x, _rigidbody.velocity.y)), 15);
 
@@ -45,13 +55,11 @@ public class PlayerMovement : MonoBehaviour
         {
             
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, accel.y);
-            Debug.Log(_rigidbody.velocity);
         }
 
         if (_rigidbody.velocity.y < 0)
         {
             _rigidbody.gravityScale = 5;
-            Debug.Log("Flling");
         }
         else
         {
@@ -64,6 +72,9 @@ public class PlayerMovement : MonoBehaviour
     {
         UpdateFlags();
 
+        // TEMP JUMP CHARGE ANIMATION
+        Vector3 scale = new(Mathf.Lerp(1.5f, 1.0f, _jumpCharge / JumpCharge), Mathf.Lerp(0.9f, 1.0f, _jumpCharge / JumpCharge), 1.0f);
+        transform.localScale = scale;
     }
 
     private Vector2 GetMovement()
@@ -80,10 +91,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButton("Jump") || Input.GetAxisRaw("Vertical") > 0.9f)
         {
-            if (_jumpCooldown <= 0 && _grounded)
+            if (_jumpCharge <= 0 && _jumpCooldown <= 0 && _grounded)
             {
                 _jumpCooldown = JumpCooldown;
                 jumpVel.y = JumpForce;
+                _jumpCharge = JumpCharge;
             }
         }
 
@@ -93,6 +105,12 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateCounters()
     {
         _jumpCooldown -= Time.deltaTime;
+        if ((Input.GetButton("Jump") || Input.GetAxisRaw("Vertical") > 0.9f) && _grounded)
+        {
+            _jumpCharge -= Time.deltaTime;
+        }
+        else
+            _jumpCharge = JumpCharge;
     }
 
     private void UpdateFlags()
@@ -120,5 +138,11 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(posRight, -Vector2.up * 1f, Color.black);
 
         return hitLeft || hitCenter || hitRight;
+    }
+
+    private void ColliderBugWorkaround()
+    {
+        _collider.enabled = false;
+        _collider.enabled = true;
     }
 }
