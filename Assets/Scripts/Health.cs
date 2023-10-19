@@ -7,6 +7,9 @@ public class Health : MonoBehaviour
     public int MaxHealth = 200;
     private float _health;
 
+    public delegate void Death(GameObject died);
+    public static event Death OnDeath;
+
     public void TakeDamage(float damage)
     {
         _health -= damage;
@@ -16,7 +19,8 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
-        
+        if (OnDeath != null)
+            OnDeath(this.gameObject);
     }
 
     public void Heal(float heal)
