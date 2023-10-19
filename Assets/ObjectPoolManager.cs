@@ -49,14 +49,15 @@ public class Pool
         if (entities.Count > 0)
         {
             GameObject entity = entities.Pop();
+            entity.SetActive(true);
             entity.transform.position = position;
             entity.transform.rotation = rotation;
-            entity.SetActive(true);
+            
             return entity;
         }
         else
         {
-            return Object.Instantiate(prototype, position, rotation);
+            return GameObject.Instantiate(prototype, position, rotation);
         }
     }
 
