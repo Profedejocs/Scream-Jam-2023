@@ -37,11 +37,11 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        int groundLayerMask =  (1 << 6) | (1 << 3);
+        int targetMask = GameInfo.GroundLayerMask | GameInfo.TargetableLayerMask;
 
         Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 50, layerMask: groundLayerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 50, layerMask: targetMask);
         Debug.DrawRay(transform.position, direction * 50f, Color.black, duration:1f);
 
         if (hit.rigidbody != null)
