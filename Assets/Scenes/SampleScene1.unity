@@ -433,22 +433,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4512110578852096478, guid: aadd620b6028a8d49b1e0b46f38bcfdd, type: 3}
-      propertyPath: m_Mass
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512110578852096478, guid: aadd620b6028a8d49b1e0b46f38bcfdd, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512110578852096478, guid: aadd620b6028a8d49b1e0b46f38bcfdd, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512110578852096478, guid: aadd620b6028a8d49b1e0b46f38bcfdd, type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5343071334932757039, guid: aadd620b6028a8d49b1e0b46f38bcfdd, type: 3}
       propertyPath: m_Name
       value: TestEnemy (5)
