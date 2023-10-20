@@ -23,6 +23,7 @@ public class PlayerShoot : MonoBehaviour
         _rifleAmmo = RifleAmmo;
         _bulletEffect = GameObject.Instantiate(BulletEffect, transform.position, Quaternion.identity);
         _bulletEffectRenderer = _bulletEffect.GetComponent<LineRenderer>();
+        _bulletEffectRenderer.enabled = false;
     }
 
     // Update is called once per frame

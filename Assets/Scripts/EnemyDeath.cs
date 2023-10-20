@@ -16,6 +16,7 @@ public class EnemyDeath : MonoBehaviour
 
     void Death(GameObject died)
     {
-        ObjectPoolManager.Return(died);
+        if (died.gameObject == gameObject)
+            ObjectPoolManager.Return(died);
     }
 }

@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _grounded;
     private Vector2 _velocity;
     private float _jumpCharge;
+    private bool _knockbacked;
 
     // Start is called before the first frame update
     void Start()
@@ -49,12 +50,13 @@ public class PlayerMovement : MonoBehaviour
             ColliderBugWorkaround();
         }
 
-        _rigidbody.velocity = Vector2.Lerp(_rigidbody.velocity, (new Vector2(accel.x, _rigidbody.velocity.y)), 15);
+        if (!_knockbacked)
+            _rigidbody.velocity = Vector2.Lerp(_rigidbody.velocity, (new Vector2(accel.x, _rigidbody.velocity.y)), 15);
 
         if (accel.y != 0)
         {
-            
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, accel.y);
+            if (!_knockbacked)
+                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, accel.y);
         }
 
         if (_rigidbody.velocity.y < 0)
@@ -66,6 +68,19 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.gravityScale = 2.5f;
         }
 
+    }
+
+    public void Knockback(Vector2 force)
+    {
+        _knockbacked = true;
+        _rigidbody.velocity = Vector2.zero;
+        _rigidbody.AddForce(force, ForceMode2D.Force);
+        Invoke("EndKnockback", 1f);
+    }
+
+    private void EndKnockback()
+    {
+        _knockbacked = false;
     }
 
     void Update()
