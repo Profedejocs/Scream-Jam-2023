@@ -105,7 +105,9 @@ GameObject:
   - component: {fileID: 3373965430343713747}
   - component: {fileID: 3557971151383688205}
   - component: {fileID: 2977898934951008770}
-  - component: {fileID: 46792735638946715}
+  - component: {fileID: 3922967412118698716}
+  - component: {fileID: 3814837007150936701}
+  - component: {fileID: 8070551959203941049}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -149,7 +151,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b050057b2a7c5b94faa6f27b6c5b0ebf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -259,7 +261,7 @@ MonoBehaviour:
   JumpCooldown: 0.25
   JumpForce: 10
   JumpCharge: 0.25
---- !u!114 &46792735638946715
+--- !u!114 &3922967412118698716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,6 +270,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 5066959539286535780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d5f7ec7d58a8e44cb2fa1684650a041, type: 3}
+  m_Script: {fileID: 11500000, guid: d65a51344eaf53a41acf72986f2313d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 200
+--- !u!114 &3814837007150936701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066959539286535780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ce15782bce32f04fa75247cf084ab4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RifleAmmo: 8
+  RifleCooldown: 2
+  RifleDamage: 75
+--- !u!114 &8070551959203941049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066959539286535780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c46e59abf091948875007873219c3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BatCooldown: 1
+  BatDamage: 25
+  BatReach: 1.25
+  BatSweep: 1
