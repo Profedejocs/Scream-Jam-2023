@@ -51,4 +51,9 @@ public class PlayerShoot : MonoBehaviour
         }
 
     }
+
+    public void AddAmmo(int amount)
+    {
+        _rifleAmmo += amount;
+    }
 }
