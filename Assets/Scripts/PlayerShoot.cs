@@ -11,12 +11,18 @@ public class PlayerShoot : MonoBehaviour
     private float _rifleCooldown;
     private int _rifleAmmo;
 
+    public GameObject BulletEffect;
+    private GameObject _bulletEffect;
+    private LineRenderer _bulletEffectRenderer;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         _rifleAmmo = RifleAmmo;
+        _bulletEffect = GameObject.Instantiate(BulletEffect, transform.position, Quaternion.identity);
+        _bulletEffectRenderer = _bulletEffect.GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -42,7 +48,6 @@ public class PlayerShoot : MonoBehaviour
         Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 50, layerMask: targetMask);
-        Debug.DrawRay(transform.position, direction * 50f, Color.black, duration:1f);
 
         if (hit.rigidbody != null)
         {
@@ -50,10 +55,21 @@ public class PlayerShoot : MonoBehaviour
                 hit.rigidbody.gameObject.GetComponent<Health>().TakeDamage(RifleDamage);
         }
 
+        _bulletEffectRenderer.enabled = true;
+        _bulletEffectRenderer.SetPosition(0, transform.position);
+        _bulletEffectRenderer.SetPosition(1, transform.position + (Vector3)(direction * 30f));
+
+        Invoke("HideBulletLine", 0.1f);
+
     }
 
     public void AddAmmo(int amount)
     {
         _rifleAmmo += amount;
+    }
+
+    private void HideBulletLine()
+    {
+        _bulletEffectRenderer.enabled = false;
     }
 }
