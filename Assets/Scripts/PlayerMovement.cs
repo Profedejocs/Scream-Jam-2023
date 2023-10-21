@@ -181,4 +181,12 @@ public class PlayerMovement : MonoBehaviour
         _collider.enabled = false;
         _collider.enabled = true;
     }
+
+    public void SetInWater() {
+        GetComponent<Animator>().SetBool("InWater", true);
+    }
+
+    public void SetOutOfWater() {
+        GetComponent<Animator>().SetBool("InWater", false);
+    }
 }
