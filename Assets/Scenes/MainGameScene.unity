@@ -828,6 +828,10 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1995425588140989667, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995425588140989667, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.51
       objectReference: {fileID: 0}
@@ -1162,8 +1166,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.4614501, y: -2.7007499, z: 0}
-    m_Extent: {x: 12.32255, y: 11.57325, z: 0}
+    m_Center: {x: 1.4675503, y: -2.7072, z: 0}
+    m_Extent: {x: 12.32755, y: 11.5652, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6184,6 +6188,14 @@ PrefabInstance:
     - target: {fileID: 6032713062123978709, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
       propertyPath: m_Name
       value: TestEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457870884059008863, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457870884059008863, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8457870884059008863, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
       propertyPath: m_LocalPosition.x
