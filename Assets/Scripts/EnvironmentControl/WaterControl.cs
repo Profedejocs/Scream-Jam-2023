@@ -9,14 +9,20 @@ public class WaterControl : MonoBehaviour
         if (collision.gameObject.name.Equals("Character"))
         {
             collision.gameObject.GetComponent<PlayerMovement>().SetInWater();
+        } else if (collision.gameObject.name.Equals("TestEnemy")) {
+            collision.gameObject.GetComponent<EnemyWalkerMovement>().SetInWater();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Character"))
+        if (collision.gameObject.name.Equals("TestEnemy"))
         {
             collision.gameObject.GetComponent<PlayerMovement>().SetOutOfWater();
+        }
+        else if (collision.gameObject.name.Equals("TestEnemy"))
+        {
+            collision.gameObject.GetComponent<EnemyWalkerMovement>().SetOutOfWater();
         }
     }
 }
