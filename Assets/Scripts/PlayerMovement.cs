@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -35,6 +36,12 @@ public class PlayerMovement : MonoBehaviour
         accel.y = 0;
         accel.y = GetJump().y;
 
+        if (input.x == 0) {
+            GetComponent<Animator>().SetBool("IsWalking", false);
+        } else {
+            GetComponent<Animator>().SetBool("IsWalking", true);
+        }
+
         UpdateCounters();
 
         if (!_grounded || _jumpCooldown > 0)
@@ -65,9 +72,23 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            _rigidbody.gravityScale = 2.5f;
+            _rigidbody.gravityScale = 2.5f; 
         }
 
+        if (_rigidbody.velocity.x < 0 && transform.localScale.x < 0) {
+            Flip();
+        } else if (_rigidbody.velocity.x > 0 && transform.localScale.x > 0)
+        {
+            Flip();
+        }
+
+    }
+
+    private void Flip() {
+        //Debug.Log("flip");
+        var scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
     public void Knockback(Vector2 force)
@@ -88,8 +109,8 @@ public class PlayerMovement : MonoBehaviour
         UpdateFlags();
 
         // TEMP JUMP CHARGE ANIMATION
-        Vector3 scale = new(Mathf.Lerp(1.5f, 1.0f, _jumpCharge / JumpCharge), Mathf.Lerp(0.9f, 1.0f, _jumpCharge / JumpCharge), 1.0f);
-        transform.localScale = scale;
+        //Vector3 scale = new(Mathf.Lerp(1.5f, 1.0f, _jumpCharge / JumpCharge), Mathf.Lerp(0.9f, 1.0f, _jumpCharge / JumpCharge), 1.0f);
+        //transform.localScale = scale;
     }
 
     private Vector2 GetMovement()
