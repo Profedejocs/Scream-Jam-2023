@@ -48,7 +48,6 @@ GameObject:
   - component: {fileID: 2715215457038721511}
   - component: {fileID: 5078897420264855380}
   - component: {fileID: 6377315051775425063}
-  - component: {fileID: 3713175684567925952}
   m_Layer: 6
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -132,7 +131,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6032713062123978709}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -140,7 +139,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 04b94c9bb8866b1479926ac69431df7b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -191,9 +190,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 2
   _pathOffset: 3
-  _speed: 2
-  _aggroRange: 2
-  _deaggroRange: 3
+  _speed: 80
+  _aggroRange: 10
+  _deaggroRange: 15
+  _aggroSpeed: 120
 --- !u!95 &2715215457038721511
 Animator:
   serializedVersion: 5
@@ -224,7 +224,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 6032713062123978709}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 04b94c9bb8866b1479926ac69431df7b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -263,16 +263,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContactDamage: 25
---- !u!114 &3713175684567925952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6032713062123978709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6b3cf8a5999c4aa074a4eb4b18592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ContactDamage: 25
+  Knockback: 250

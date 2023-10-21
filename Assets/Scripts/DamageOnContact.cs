@@ -5,6 +5,7 @@ using UnityEngine;
 public class DamageOnContact : MonoBehaviour
 {
     public float ContactDamage;
+    public float Knockback;
     private GameObject _player;
 
 
@@ -22,7 +23,7 @@ public class DamageOnContact : MonoBehaviour
             Debug.Log(direction);
 
             _player.GetComponent<Health>().TakeDamage(ContactDamage);
-            _player.GetComponent<PlayerMovement>().Knockback((direction) * 1000f);
+            _player.GetComponent<PlayerMovement>().Knockback((direction) * Knockback);
             Debug.Log("Attacks");
         }
     }

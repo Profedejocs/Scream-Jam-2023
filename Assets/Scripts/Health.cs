@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     public int MaxHealth = 200;
     private float _health;
 
+    public bool UseIFrames;
     public float iFrameTime = 0.5f;
     private float _iFrameTime;
 
@@ -15,7 +16,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (_iFrameTime <= 0)
+        if (_iFrameTime <= 0 || !UseIFrames)
         {
             _health -= damage;
             if (_health <= 0)

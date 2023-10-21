@@ -16,7 +16,7 @@ public class WaterControl : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("TestEnemy"))
+        if (collision.gameObject.name.Equals("Character"))
         {
             collision.gameObject.GetComponent<PlayerMovement>().SetOutOfWater();
         }

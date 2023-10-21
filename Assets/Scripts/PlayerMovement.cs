@@ -68,11 +68,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (_rigidbody.velocity.y < 0)
         {
-            _rigidbody.gravityScale = 5;
+            if (!_knockbacked)
+                _rigidbody.gravityScale = 5;
         }
         else
         {
-            _rigidbody.gravityScale = 2.5f; 
+            if (!_knockbacked)
+                _rigidbody.gravityScale = 2.5f; 
         }
 
         if (_rigidbody.velocity.x < 0 && transform.localScale.x < 0) {
@@ -96,11 +98,20 @@ public class PlayerMovement : MonoBehaviour
         _knockbacked = true;
         _rigidbody.velocity = Vector2.zero;
         _rigidbody.AddForce(force, ForceMode2D.Force);
-        Invoke("EndKnockback", 1f);
+
+        _rigidbody.sharedMaterial.friction = 0.0f;
+        _collider.sharedMaterial.friction = 0.0f;
+        _rigidbody.gravityScale = 5f;
+        ColliderBugWorkaround();
+        Invoke("EndKnockback", 0.5f);
     }
 
     private void EndKnockback()
     {
+        _rigidbody.sharedMaterial.friction = 0.4f;
+        _collider.sharedMaterial.friction = 0.4f;
+        _rigidbody.gravityScale = 2.5f;
+        ColliderBugWorkaround();
         _knockbacked = false;
     }
 
