@@ -101,5 +101,13 @@ public class EnemyWalkerMovement : MonoBehaviour
         }
     }
 
+    public void SetInWater() {
+        GetComponent<Animator>().SetBool("InWater", true);
+    }
+
+    public void SetOutOfWater()
+    {
+        GetComponent<Animator>().SetBool("InWater", false);
+    }
 
 }
