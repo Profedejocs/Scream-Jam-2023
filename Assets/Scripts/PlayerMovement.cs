@@ -18,13 +18,22 @@ public class PlayerMovement : MonoBehaviour
     private float _jumpCharge;
     private bool _knockbacked;
 
+    public AudioClip footstepOne;
+    public AudioClip footstepTwo;
+    private bool _playOne;
+
+    private AudioSource _audioSource;
+    private float _footstepCount;
+    public static float FootstepFrequency = 0.35f;
+
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
         _velocity = new Vector2();
-
+        _audioSource = GetComponent<AudioSource>();
+        _footstepCount = FootstepFrequency;
     }
 
     void FixedUpdate()
@@ -55,6 +64,19 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.sharedMaterial.friction = 0.4f;
             _collider.sharedMaterial.friction = 0.4f;
             ColliderBugWorkaround();
+        }
+
+        if (_grounded && accel.x != 0 && !_knockbacked)
+            _footstepCount -= Time.deltaTime;
+
+        if (_footstepCount < 0)
+        {
+            if (_playOne)
+                _audioSource.PlayOneShot(footstepOne);
+            else
+                _audioSource.PlayOneShot(footstepTwo);
+            _playOne = !_playOne;
+            _footstepCount = FootstepFrequency;
         }
 
         if (!_knockbacked)

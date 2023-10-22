@@ -15,6 +15,9 @@ public class PlayerShoot : MonoBehaviour
     private GameObject _bulletEffect;
     private LineRenderer _bulletEffectRenderer;
 
+    public AudioClip Gunshot;
+    
+    private AudioSource _audioSource;
 
 
     // Start is called before the first frame update
@@ -24,6 +27,7 @@ public class PlayerShoot : MonoBehaviour
         _bulletEffect = GameObject.Instantiate(BulletEffect, transform.position, Quaternion.identity);
         _bulletEffectRenderer = _bulletEffect.GetComponent<LineRenderer>();
         _bulletEffectRenderer.enabled = false;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +40,7 @@ public class PlayerShoot : MonoBehaviour
                 _rifleAmmo--;
                 _rifleCooldown = RifleCooldown;
                 Shoot();
+                _audioSource.PlayOneShot(Gunshot);
             }
         }
 
