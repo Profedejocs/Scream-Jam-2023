@@ -174,7 +174,7 @@ MonoBehaviour:
   PlayerAccel: 7
   JumpCooldown: 0.25
   JumpForce: 15
-  JumpCharge: 0.25
+  JumpCharge: 0
   footstepOne: {fileID: 8300000, guid: 771ad3c490937f7429965c278d54d097, type: 3}
   footstepTwo: {fileID: 8300000, guid: d9a2d0b3ea3d918418323bcc797ff670, type: 3}
 --- !u!114 &1601883702423165767
@@ -655,7 +655,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 81dc9b3d8d7885d4786c22598fecab6e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 84017b79fe50ac14690f469841147251, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.18
   m_Pitch: 1
   Loop: 1
   Mute: 0
