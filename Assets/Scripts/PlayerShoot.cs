@@ -16,6 +16,7 @@ public class PlayerShoot : MonoBehaviour
     private LineRenderer _bulletEffectRenderer;
 
     public AudioClip Gunshot;
+    public AudioClip Dryfire;
     
     private AudioSource _audioSource;
 
@@ -41,6 +42,11 @@ public class PlayerShoot : MonoBehaviour
                 _rifleCooldown = RifleCooldown;
                 Shoot();
                 _audioSource.PlayOneShot(Gunshot);
+            }
+            else if (_rifleAmmo <= 0 && _rifleCooldown <= 0)
+            {
+                _rifleCooldown = RifleCooldown;
+                _audioSource.PlayOneShot(Dryfire);
             }
         }
 
