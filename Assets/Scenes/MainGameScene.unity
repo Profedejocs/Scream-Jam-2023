@@ -1485,8 +1485,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 27.2658, y: -3.0160499, z: 0}
-    m_Extent: {x: 9.822999, y: 11.69445, z: 0}
+    m_Center: {x: 27.26545, y: -3.0267, z: 0}
+    m_Extent: {x: 9.814049, y: 11.6887, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2156,8 +2156,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 23.14115, y: -5.2861, z: 0}
-    m_Extent: {x: 14.04365, y: 13.544199, z: 0}
+    m_Center: {x: 23.1352, y: -5.2802496, z: 0}
+    m_Extent: {x: 14.049199, y: 13.53955, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2678,30 +2678,6 @@ PrefabInstance:
     - target: {fileID: 1995425588140989667, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3373965430343713747, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
-      propertyPath: m_Size.x
-      value: 1.1812899
-      objectReference: {fileID: 0}
-    - target: {fileID: 3373965430343713747, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
-      propertyPath: m_Size.y
-      value: 2.161406
-      objectReference: {fileID: 0}
-    - target: {fileID: 3373965430343713747, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.046924233
-      objectReference: {fileID: 0}
-    - target: {fileID: 3373965430343713747, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.24192381
-      objectReference: {fileID: 0}
-    - target: {fileID: 3922967412118698716, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
-      propertyPath: iFrameTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4747935329252104208, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5066959539286535780, guid: f56faa4fdf672834f9bbbb453f98b3c6, type: 3}
       propertyPath: m_Name
@@ -3453,8 +3429,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 1.4677, y: -2.6973, z: 0}
-    m_Extent: {x: 12.3197, y: 11.563, z: 0}
+    m_Center: {x: 1.46345, y: -2.70055, z: 0}
+    m_Extent: {x: 12.31905, y: 11.56875, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8474,8 +8450,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 41.6244, y: -5.1288, z: 0}
-    m_Extent: {x: 8.1544, y: 8.0995, z: 0}
+    m_Center: {x: 41.62525, y: -5.12335, z: 0}
+    m_Extent: {x: 8.152449, y: 8.09855, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8754,8 +8730,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 24.8536, y: -5.12825, z: 0}
-    m_Extent: {x: 6.2346, y: 12.421551, z: 0}
+    m_Center: {x: 24.8508, y: -5.1233, z: 0}
+    m_Extent: {x: 6.229, y: 12.4149, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -9108,8 +9084,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 22.9922, y: -6.84235, z: 0}
-    m_Extent: {x: 8.1987, y: 11.18725, z: 0}
+    m_Center: {x: 22.9889, y: -6.85555, z: 0}
+    m_Extent: {x: 8.1988, y: 11.19255, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10057,37 +10033,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3132785040576077666, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6032713062123978709, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
       propertyPath: m_Name
       value: TestEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8378533107020111115, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
-      propertyPath: _hasHiddenAggro
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8378533107020111115, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
-      propertyPath: _aggroPathPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8378533107020111115, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
-      propertyPath: _aggroPathPoints.Array.data[0].x
-      value: 38.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 8378533107020111115, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
-      propertyPath: _aggroPathPoints.Array.data[0].y
-      value: 2.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8378533107020111115, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
-      propertyPath: _aggroPathPoints.Array.data[1].x
-      value: 41.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 8378533107020111115, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
-      propertyPath: _aggroPathPoints.Array.data[1].y
-      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 8457870884059008863, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10128,10 +10076,6 @@ PrefabInstance:
     - target: {fileID: 8457870884059008863, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8637736722732012145, guid: 27bb6b972d0b49e42947529c70fe8911, type: 3}
-      propertyPath: m_MaskInteraction
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

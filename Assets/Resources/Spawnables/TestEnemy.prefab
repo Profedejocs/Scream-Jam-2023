@@ -193,9 +193,8 @@ MonoBehaviour:
   Speed: 2
   _hasHiddenAggro: 1
   _aggroPathPoints:
-  - {x: 90.26, y: 2.88}
-  - {x: 97.63, y: 2.88}
-  - {x: 98.95, y: 0.66}
+  - {x: 38.87, y: 2.64}
+  - {x: 41.27, y: -1.4}
   _pathOffset: 3
   _speed: 80
   _aggroRange: 10
