@@ -27,6 +27,7 @@ public class EnemyWalkerMovement : MonoBehaviour
     [SerializeField] private float _deaggroRange = 15f;
     [SerializeField] private float _aggroSpeed = 120f;
     private bool _isAggro = false;
+    private bool _isAutoAggro = false;
 
     private float _curSpeed = 0f;
 
@@ -49,18 +50,18 @@ public class EnemyWalkerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!_isAggro && Vector3.Distance(transform.position, _player.transform.position) <= _aggroRange)
+        if (!_isAutoAggro && !_isAggro && Vector3.Distance(transform.position, _player.transform.position) <= _aggroRange)
         {
             _isAggro = true;
         }
-        else if (_isAggro && Vector3.Distance(transform.position, _player.transform.position) >= _deaggroRange) {
+        else if (!_isAutoAggro && _isAggro && Vector3.Distance(transform.position, _player.transform.position) >= _deaggroRange) {
             _isAggro = false;
         }
 
         //If aggro move towards character
         //If not aggro move either back to move range, or move in range
 
-        if (!_isAggro && transform.position.x > _leftBounds && transform.position.x < _rightBounds)
+        if (!_isAutoAggro && !_isAggro && transform.position.x > _leftBounds && transform.position.x < _rightBounds)
         {
             if (_stateChangeTimer <= Time.time)
             {
@@ -96,7 +97,7 @@ public class EnemyWalkerMovement : MonoBehaviour
                 }
             }
         }
-        else if (!_isAggro && (transform.position.x < _leftBounds || transform.position.x > _rightBounds))
+        else if (!_isAutoAggro && !_isAggro && (transform.position.x < _leftBounds || transform.position.x > _rightBounds))
         {
             if (transform.position.x < _leftBounds && (_rigidbody.velocity.x / Mathf.Abs(_rigidbody.velocity.x)) != 1f)
             {
@@ -107,10 +108,11 @@ public class EnemyWalkerMovement : MonoBehaviour
                 _curSpeed = _speed * -1f;
             }
         }
-        else if (_isAggro) {
+        else if (!_isAutoAggro && _isAggro) {
             Debug.Log("Aggroed");
             Vector3 dir = _player.transform.position - transform.position;
             if ((_rigidbody.velocity.x / Mathf.Abs(_rigidbody.velocity.x)) != (dir.x / Mathf.Abs(dir.x))) {
+                GetComponent<Animator>().SetBool("IsWalking", true);
                 _curSpeed = _aggroSpeed * (dir.x / Mathf.Abs(dir.x));
             }
         }
@@ -137,6 +139,15 @@ public class EnemyWalkerMovement : MonoBehaviour
     public void SetOutOfWater()
     {
         GetComponent<Animator>().SetBool("InWater", false);
+    }
+
+    public void SetIsAutoAggro() {
+        _player = GameObject.Find("Character");
+        Vector3 dir = _player.transform.position - transform.position;
+        _curSpeed = _aggroSpeed * (dir.x / Mathf.Abs(dir.x));
+        _isAutoAggro = true;
+        _aggroSpeed = 150f;
+        GetComponent<Animator>().SetBool("IsWalking", true);
     }
 
 }

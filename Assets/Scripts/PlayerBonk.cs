@@ -28,6 +28,8 @@ public class PlayerBonk : MonoBehaviour
 
     private void Bonk()
     {
+        GetComponent<Animator>().SetTrigger("Bonk");
+
         bool facingRight = Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x;
 
         Vector2 topleft = new();
