@@ -1,3 +1,4 @@
+using MilkShake;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,10 +15,15 @@ public class Health : MonoBehaviour
     public delegate void Death(GameObject died);
     public static event Death OnDeath;
 
+    public ShakePreset DamageShake;
+
     public void TakeDamage(float damage)
     {
         if (_iFrameTime <= 0 || !UseIFrames)
         {
+            if (gameObject.name.Equals("Character"))
+                GameObject.Find("MainCamera").GetComponent<Shaker>().Shake(DamageShake);
+
             _health -= damage;
             if (_health <= 0)
                 Die();
