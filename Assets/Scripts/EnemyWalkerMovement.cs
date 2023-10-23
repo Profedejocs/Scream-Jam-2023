@@ -125,7 +125,7 @@ public class EnemyWalkerMovement : MonoBehaviour
             }
         }
         else if (_hasHiddenAggro && _hiddenAggroTriggered) {
-            if ((Vector2)transform.position == _aggroPathPoints[0]) { 
+            if (_aggroPathPoints.Count > 0 && (Vector2)transform.position == _aggroPathPoints[0]) { 
                 _aggroPathPoints.RemoveAt(0);
 
                 if (_aggroPathPoints.Count == 0) {
@@ -137,6 +137,17 @@ public class EnemyWalkerMovement : MonoBehaviour
                     if (_hiddenMasks)
                         Destroy(_hiddenMasks);
                 }
+            }
+
+            if (_aggroPathPoints.Count == 0 && _hasHiddenAggro == true)
+            {
+                _rigidbody.bodyType = RigidbodyType2D.Dynamic;
+                _hasHiddenAggro = false;
+                _hiddenAggroTriggered = false;
+                if (_isAutoAggro)
+                    SetIsAutoAggro();
+                if (_hiddenMasks)
+                    Destroy(_hiddenMasks);
             }
 
             if (_aggroPathPoints.Count > 0)
