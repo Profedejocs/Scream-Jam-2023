@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6705017021165356499}
   - component: {fileID: 2864709313577032934}
   - component: {fileID: 7579752388134821003}
+  - component: {fileID: 8509688021929522513}
   m_Layer: 0
   m_Name: SporeFog
   m_TagString: Untagged
@@ -4829,3 +4830,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8509688021929522513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7673646295866201123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58dc8fc21f8d676488e5daa3ee94abfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InfectionRadius: 2.5
+  InfectionRate: 5
