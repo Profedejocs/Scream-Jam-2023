@@ -126,12 +126,12 @@ TextureImporter:
       name: spritesheet-character-bat_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1235
-        height: 1072
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 773
+        y: 60
+        width: 455
+        height: 902
+      alignment: 9
+      pivot: {x: 0.3207442, y: 0.4336899}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: spritesheet-character-bat_1
       rect:
         serializedVersion: 2
-        x: 1235
-        y: 0
-        width: 1235
-        height: 1072
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1778
+        y: 20
+        width: 536
+        height: 1017
+      alignment: 9
+      pivot: {x: 0.57101125, y: 0.3369307}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: spritesheet-character-bat_2
       rect:
         serializedVersion: 2
-        x: 2470
-        y: 0
-        width: 1235
-        height: 1072
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2708
+        y: 27
+        width: 836
+        height: 612
+      alignment: 9
+      pivot: {x: 0.7081313, y: 0.53998107}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: spritesheet-character-bat_3
       rect:
         serializedVersion: 2
-        x: 3705
-        y: 0
-        width: 1235
-        height: 1072
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 4134
+        y: 57
+        width: 673
+        height: 742
+      alignment: 9
+      pivot: {x: 0.6853742, y: 0.5309723}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: spritesheet-character-bat_4
       rect:
         serializedVersion: 2
-        x: 4940
-        y: 0
-        width: 1235
-        height: 1072
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 5335
+        y: 56
+        width: 713
+        height: 768
+      alignment: 9
+      pivot: {x: 0.7170434, y: 0.50876087}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: spritesheet-character-bat_5
       rect:
         serializedVersion: 2
-        x: 6175
-        y: 0
-        width: 1235
-        height: 1072
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 6931
+        y: 60
+        width: 390
+        height: 959
+      alignment: 9
+      pivot: {x: 0.3922814, y: 0.40043998}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

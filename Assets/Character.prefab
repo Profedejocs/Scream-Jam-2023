@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8213223629401950109}
   - component: {fileID: 9078346521868190750}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RifleRotation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 8375750442449601556}
   - component: {fileID: 8079153278838060571}
   - component: {fileID: 440149672864594488}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!70 &3373965430343713747
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -210,8 +210,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.00000012062054}
-  m_Size: {x: 1.034446, y: 1.9839863}
+  m_Offset: {x: 0.046924233, y: 0.24192381}
+  m_Size: {x: 1.1812899, y: 2.161406}
   m_Direction: 0
 --- !u!50 &3557971151383688205
 Rigidbody2D:
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de30a76508311249a32892a8db5186e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerAccel: 7
+  PlayerAccel: 4
   JumpCooldown: 0.25
   JumpForce: 15
   JumpCharge: 0
@@ -284,7 +284,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 200
   UseIFrames: 1
-  iFrameTime: 0.5
+  iFrameTime: 1
+  DamageShake: {fileID: 11400000, guid: f36f4e8a7d2553646a0772656208fee1, type: 2}
 --- !u!114 &3814837007150936701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,7 +1024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4972578620431620611}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1055,7 +1056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2243549120222260295}
   - component: {fileID: 8603877597151561516}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
