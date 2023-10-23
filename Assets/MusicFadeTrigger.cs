@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class MusicFadeTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool _isTriggered = false;
+    private AudioSource _charSource1;
+    private AudioSource _charSource2;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (!_isTriggered && collision.gameObject.name.Equals("Character")) { 
+            
+        }
     }
 }
