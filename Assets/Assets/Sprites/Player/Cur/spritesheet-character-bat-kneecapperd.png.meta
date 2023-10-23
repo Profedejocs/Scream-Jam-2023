@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 089779f29d5f56241a32b643fe283b12
-      internalID: 1712920507
+      spriteID: bd47df6978840654ab8d64fc9adf8983
+      internalID: -1464110029
       vertices: []
       indices: 
       edges: []
@@ -158,50 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60a120663d262c1419979ddac01a8436
-      internalID: -58968636
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet-character-bat-kneecapperd_3
-      rect:
-        serializedVersion: 2
-        x: 3705
-        y: 0
-        width: 1235
-        height: 1072
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d9ebc37e84917748973c84e1055adf6
-      internalID: 1975151076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet-character-bat-kneecapperd_5
-      rect:
-        serializedVersion: 2
-        x: 6175
-        y: 0
-        width: 1235
-        height: 1072
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4257353618134f843a673a3d7cd6366c
-      internalID: -1156170995
+      spriteID: 8b9d186b80cf2b64a8ab902e3d948a26
+      internalID: 896847617
       vertices: []
       indices: 
       edges: []
@@ -221,8 +179,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2912a49bf906dcc4da0b27a5a706dc4a
-      internalID: -572519486
+      spriteID: 6de2d17db3fff5b4aa6e1b9d88be2057
+      internalID: 1305161991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-character-bat-kneecapperd_3
+      rect:
+        serializedVersion: 2
+        x: 3705
+        y: 0
+        width: 1235
+        height: 1072
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f9be015fa83d44782bfa9df10e7af8
+      internalID: -576567006
       vertices: []
       indices: 
       edges: []
@@ -242,8 +221,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd5c8eaf1b96b3a46b9f3012fbe852ed
-      internalID: 1528559122
+      spriteID: 801eba782949b8240b457e336417c4b3
+      internalID: 469469788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-character-bat-kneecapperd_5
+      rect:
+        serializedVersion: 2
+        x: 6175
+        y: 0
+        width: 1235
+        height: 1072
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e6592bc6c124a4a825981fcb327937
+      internalID: -152842267
       vertices: []
       indices: 
       edges: []
@@ -259,12 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spritesheet-character-bat-kneecapperd_0: 1712920507
-      spritesheet-character-bat-kneecapperd_1: -58968636
-      spritesheet-character-bat-kneecapperd_2: -572519486
-      spritesheet-character-bat-kneecapperd_3: 1975151076
-      spritesheet-character-bat-kneecapperd_4: 1528559122
-      spritesheet-character-bat-kneecapperd_5: -1156170995
+      spritesheet-character-bat-kneecapperd_0: -1464110029
+      spritesheet-character-bat-kneecapperd_1: 896847617
+      spritesheet-character-bat-kneecapperd_2: 1305161991
+      spritesheet-character-bat-kneecapperd_3: -576567006
+      spritesheet-character-bat-kneecapperd_4: 469469788
+      spritesheet-character-bat-kneecapperd_5: -152842267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
