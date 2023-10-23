@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec353c25b1dbf14d87ef890a169ffe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Infection: {fileID: 7673646295866201123, guid: c0e3076db4481d74498a340a6d8013a3, type: 3}
 --- !u!114 &8378533107020111115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,14 +194,13 @@ MonoBehaviour:
   Speed: 2
   _hasHiddenAggro: 1
   _aggroPathPoints:
-  - {x: 38.87, y: 2.64}
-  - {x: 41.27, y: -1.4}
+  - {x: 131.73, y: 0.74}
   _pathOffset: 3
   _speed: 80
   _aggroRange: 10
   _deaggroRange: 15
   _aggroSpeed: 120
-  _isAutoAggro: 0
+  _isAutoAggro: 1
 --- !u!95 &2715215457038721511
 Animator:
   serializedVersion: 5
