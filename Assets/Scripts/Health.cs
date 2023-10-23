@@ -17,6 +17,11 @@ public class Health : MonoBehaviour
 
     public ShakePreset DamageShake;
 
+    public bool InIFrame()
+    {
+        return _iFrameTime > 0f;
+    }
+
     public void TakeDamage(float damage)
     {
         if (_iFrameTime <= 0 || !UseIFrames)
@@ -28,6 +33,8 @@ public class Health : MonoBehaviour
             if (_health <= 0)
                 Die();
             _iFrameTime = iFrameTime;
+            if (UseIFrames)
+                gameObject.layer = LayerMask.NameToLayer("IFrame");
         }
     }
 
@@ -51,6 +58,11 @@ public class Health : MonoBehaviour
     private void Update()
     {
         _iFrameTime -= Time.deltaTime;
+        if (_iFrameTime <= 0)
+        {
+            if (UseIFrames)
+                gameObject.layer = LayerMask.NameToLayer("Character");
+        }
     }
 
     public float GetHealth()
