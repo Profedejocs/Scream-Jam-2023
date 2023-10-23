@@ -109,7 +109,6 @@ public class EnemyWalkerMovement : MonoBehaviour
             }
         }
         else if (!_isAutoAggro && _isAggro) {
-            Debug.Log("Aggroed");
             Vector3 dir = _player.transform.position - transform.position;
             if ((_rigidbody.velocity.x / Mathf.Abs(_rigidbody.velocity.x)) != (dir.x / Mathf.Abs(dir.x))) {
                 GetComponent<Animator>().SetBool("IsWalking", true);

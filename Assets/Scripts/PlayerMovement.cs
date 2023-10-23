@@ -98,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
                 _rigidbody.gravityScale = 2.5f; 
         }
 
+        
         if (_rigidbody.velocity.x < 0 && transform.localScale.x < 0) {
             Flip();
         } else if (_rigidbody.velocity.x > 0 && transform.localScale.x > 0)
@@ -118,12 +119,17 @@ public class PlayerMovement : MonoBehaviour
     {
         _knockbacked = true;
         _rigidbody.velocity = Vector2.zero;
-        _rigidbody.AddForce(force, ForceMode2D.Force);
+        Debug.Log("FORCE: " + force.x + ", " + force.y);
+        _rigidbody.AddForce(force * 0.1f, ForceMode2D.Impulse);
+
 
         _rigidbody.sharedMaterial.friction = 0.0f;
         _collider.sharedMaterial.friction = 0.0f;
         _rigidbody.gravityScale = 5f;
         ColliderBugWorkaround();
+
+        
+        
         Invoke("EndKnockback", 0.5f);
     }
 

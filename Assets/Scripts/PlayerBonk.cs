@@ -10,9 +10,19 @@ public class PlayerBonk : MonoBehaviour
     public float BatSweep;
 
     private float _batCooldown;
+
+    public AudioClip Whoosh;
+    public AudioClip BonkSound;
+
+    private AudioSource _audioSource;
+
+    private PlayerShoot _shootScript;
+
     void Start()
     {
         _batCooldown = BatCooldown;
+        _audioSource = GetComponent<AudioSource>();
+        _shootScript = GetComponent<PlayerShoot>();
     }
 
     // Update is called once per frame
@@ -26,8 +36,16 @@ public class PlayerBonk : MonoBehaviour
         }
     }
 
+    private void ShowRifle()
+    {
+        _shootScript.ShowRifle();
+    }
+
+
     private void Bonk()
     {
+        _shootScript.HideRifle();
+        Invoke("ShowRifle", 0.85f);
         GetComponent<Animator>().SetTrigger("Bonk");
 
         bool facingRight = Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x;
@@ -49,6 +67,17 @@ public class PlayerBonk : MonoBehaviour
             botright.x = transform.position.x;
         }
         Collider2D[] hits = Physics2D.OverlapAreaAll(topleft, botright, GameInfo.TargetableLayerMask);
+
+        
+
+        if (hits.Length > 0)
+        {
+            _audioSource.PlayOneShot(BonkSound);
+        }
+        else
+        {
+            _audioSource.PlayOneShot(Whoosh);
+        }
 
         foreach (var hit in hits)
         {

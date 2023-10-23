@@ -20,7 +20,6 @@ public class DamageOnContact : MonoBehaviour
         if (collision.gameObject.name == _player.name)
         {
             Vector2 direction = (collision.gameObject.transform.position - transform.position).normalized;
-            Debug.Log(direction);
 
             _player.GetComponent<Health>().TakeDamage(ContactDamage);
             _player.GetComponent<PlayerMovement>().Knockback((direction) * Knockback);
