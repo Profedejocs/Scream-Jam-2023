@@ -15,6 +15,15 @@ public class PlayerMovement : MonoBehaviour
     private bool _grounded;
     private Vector2 _velocity;
     private float _jumpCharge;
+    private bool _knockbacked;
+
+    public AudioClip footstepOne;
+    public AudioClip footstepTwo;
+    private bool _playOne;
+
+    private AudioSource _audioSource;
+    private float _footstepCount;
+    public static float FootstepFrequency = 0.35f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
         _velocity = new Vector2();
-
+        _audioSource = GetComponent<AudioSource>();
+        _footstepCount = FootstepFrequency;
     }
 
     void FixedUpdate()
@@ -33,6 +43,12 @@ public class PlayerMovement : MonoBehaviour
         accel.x = input.x * PlayerAccel;
         accel.y = 0;
         accel.y = GetJump().y;
+
+        if (input.x == 0) {
+            GetComponent<Animator>().SetBool("IsWalking", false);
+        } else {
+            GetComponent<Animator>().SetBool("IsWalking", true);
+        }
 
         UpdateCounters();
 
@@ -49,23 +65,81 @@ public class PlayerMovement : MonoBehaviour
             ColliderBugWorkaround();
         }
 
-        _rigidbody.velocity = Vector2.Lerp(_rigidbody.velocity, (new Vector2(accel.x, _rigidbody.velocity.y)), 15);
+        if (_grounded && accel.x != 0 && !_knockbacked)
+            _footstepCount -= Time.deltaTime;
+
+        if (_footstepCount < 0)
+        {
+            if (_playOne)
+                _audioSource.PlayOneShot(footstepOne);
+            else
+                _audioSource.PlayOneShot(footstepTwo);
+            _playOne = !_playOne;
+            _footstepCount = FootstepFrequency;
+        }
+
+        if (!_knockbacked)
+            _rigidbody.velocity = Vector2.Lerp(_rigidbody.velocity, (new Vector2(accel.x, _rigidbody.velocity.y)), 15);
 
         if (accel.y != 0)
         {
-            
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, accel.y);
+            if (!_knockbacked)
+                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, accel.y);
         }
 
         if (_rigidbody.velocity.y < 0)
         {
-            _rigidbody.gravityScale = 5;
+            if (!_knockbacked)
+                _rigidbody.gravityScale = 5;
         }
         else
         {
-            _rigidbody.gravityScale = 2.5f;
+            if (!_knockbacked)
+                _rigidbody.gravityScale = 2.5f; 
         }
 
+        
+        if (_rigidbody.velocity.x < 0 && transform.localScale.x < 0) {
+            Flip();
+        } else if (_rigidbody.velocity.x > 0 && transform.localScale.x > 0)
+        {
+            Flip();
+        }
+
+    }
+
+    private void Flip() {
+        //Debug.Log("flip");
+        var scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
+
+    public void Knockback(Vector2 force)
+    {
+        _knockbacked = true;
+        _rigidbody.velocity = Vector2.zero;
+        Debug.Log("FORCE: " + force.x + ", " + force.y);
+        _rigidbody.AddForce(force * 0.1f, ForceMode2D.Impulse);
+
+
+        _rigidbody.sharedMaterial.friction = 0.0f;
+        _collider.sharedMaterial.friction = 0.0f;
+        _rigidbody.gravityScale = 5f;
+        ColliderBugWorkaround();
+
+        
+        
+        Invoke("EndKnockback", 0.5f);
+    }
+
+    private void EndKnockback()
+    {
+        _rigidbody.sharedMaterial.friction = 0.4f;
+        _collider.sharedMaterial.friction = 0.4f;
+        _rigidbody.gravityScale = 2.5f;
+        ColliderBugWorkaround();
+        _knockbacked = false;
     }
 
     void Update()
@@ -73,8 +147,8 @@ public class PlayerMovement : MonoBehaviour
         UpdateFlags();
 
         // TEMP JUMP CHARGE ANIMATION
-        Vector3 scale = new(Mathf.Lerp(1.5f, 1.0f, _jumpCharge / JumpCharge), Mathf.Lerp(0.9f, 1.0f, _jumpCharge / JumpCharge), 1.0f);
-        transform.localScale = scale;
+        //Vector3 scale = new(Mathf.Lerp(1.5f, 1.0f, _jumpCharge / JumpCharge), Mathf.Lerp(0.9f, 1.0f, _jumpCharge / JumpCharge), 1.0f);
+        //transform.localScale = scale;
     }
 
     private Vector2 GetMovement()
@@ -144,5 +218,13 @@ public class PlayerMovement : MonoBehaviour
     {
         _collider.enabled = false;
         _collider.enabled = true;
+    }
+
+    public void SetInWater() {
+        GetComponent<Animator>().SetBool("InWater", true);
+    }
+
+    public void SetOutOfWater() {
+        GetComponent<Animator>().SetBool("InWater", false);
     }
 }
