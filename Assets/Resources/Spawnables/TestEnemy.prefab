@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  UseIFrames: 0
   iFrameTime: 0.5
 --- !u!114 &1626837232486361256
 MonoBehaviour:
@@ -247,8 +248,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.11, y: 0.02}
-  m_Size: {x: 0.96, y: 1.8}
+  m_Offset: {x: -0.04983465, y: 0.020000009}
+  m_Size: {x: 0.6403306, y: 1.8}
   m_Direction: 0
 --- !u!114 &6377315051775425063
 MonoBehaviour:
