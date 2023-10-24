@@ -126,10 +126,10 @@ TextureImporter:
       name: spritesheet-character-bat-kneecapperd_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1235
-        height: 1072
+        x: 773
+        y: 205
+        width: 455
+        height: 757
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: spritesheet-character-bat-kneecapperd_1
       rect:
         serializedVersion: 2
-        x: 1235
-        y: 0
-        width: 1235
-        height: 1072
+        x: 1778
+        y: 205
+        width: 518
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: spritesheet-character-bat-kneecapperd_2
       rect:
         serializedVersion: 2
-        x: 2470
-        y: 0
-        width: 1235
-        height: 1072
+        x: 2836
+        y: 205
+        width: 672
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: spritesheet-character-bat-kneecapperd_3
       rect:
         serializedVersion: 2
-        x: 3705
-        y: 0
-        width: 1235
-        height: 1072
+        x: 4134
+        y: 205
+        width: 673
+        height: 594
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: spritesheet-character-bat-kneecapperd_4
       rect:
         serializedVersion: 2
-        x: 4940
-        y: 0
-        width: 1235
-        height: 1072
+        x: 5335
+        y: 205
+        width: 713
+        height: 619
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: spritesheet-character-bat-kneecapperd_5
       rect:
         serializedVersion: 2
-        x: 6175
-        y: 0
-        width: 1235
-        height: 1072
+        x: 6931
+        y: 205
+        width: 390
+        height: 814
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

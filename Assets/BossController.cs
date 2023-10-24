@@ -20,6 +20,8 @@ public class BossController : MonoBehaviour
     private float _circleRad1;
     private float _circleRad2;
 
+    private bool _stopped = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,19 +41,22 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Follow Player
-        var direction = _player.transform.position - transform.position;
-        _rigidbody2D.velocity = direction * _speed * Time.deltaTime;
+        if (!_stopped)
+        {
+            //Follow Player
+            var direction = _player.transform.position - transform.position;
+            _rigidbody2D.velocity = direction * _speed * Time.deltaTime;
 
-        //Circle Rotate 1
-        _circle1CurAngle += _angularSpeed * Time.deltaTime;
-        Vector3 offset1 = new Vector3(Mathf.Sin(_circle1CurAngle), Mathf.Cos(_circle1CurAngle), 0f) * _circleRad1;
-        _cloudSmall1.transform.position = _cloudMain.transform.position + offset1;
+            //Circle Rotate 1
+            _circle1CurAngle += _angularSpeed * Time.deltaTime;
+            Vector3 offset1 = new Vector3(Mathf.Sin(_circle1CurAngle), Mathf.Cos(_circle1CurAngle), 0f) * _circleRad1;
+            _cloudSmall1.transform.position = _cloudMain.transform.position + offset1;
 
-        //Circle Rotate 2
-        _circle2CurAngle += _angularSpeed * Time.deltaTime;
-        Vector3 offset2 = new Vector3(Mathf.Sin(_circle2CurAngle), Mathf.Cos(_circle2CurAngle), 0f) * _circleRad2;
-        _cloudSmall2.transform.position = _cloudMain.transform.position + offset2;
+            //Circle Rotate 2
+            _circle2CurAngle += _angularSpeed * Time.deltaTime;
+            Vector3 offset2 = new Vector3(Mathf.Sin(_circle2CurAngle), Mathf.Cos(_circle2CurAngle), 0f) * _circleRad2;
+            _cloudSmall2.transform.position = _cloudMain.transform.position + offset2;
+        }
     }
 
     public void Despawn() {
@@ -60,5 +65,6 @@ public class BossController : MonoBehaviour
         _cloudSmall2.GetComponent<ParticleSystem>().Stop();
 
         Destroy(GetComponent<InfectionSource>());
+        _stopped = true;
     }
 }

@@ -235,6 +235,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1038670756960411810}
     m_Modifications:
     - target: {fileID: 2864709313577032934, guid: c0e3076db4481d74498a340a6d8013a3, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864709313577032934, guid: c0e3076db4481d74498a340a6d8013a3, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.b
       value: 0.87843144
       objectReference: {fileID: 0}
