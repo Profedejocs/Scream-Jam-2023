@@ -21,7 +21,8 @@ public class PlayerInfection : MonoBehaviour
     public void Infect(float quantity)
     {
         _infection += quantity;
-        Debug.Log(_infection);
+        if (_infection > MaxInfection)
+            GetComponent<Health>().Die();
     }
 
     
