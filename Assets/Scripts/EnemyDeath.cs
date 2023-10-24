@@ -23,7 +23,8 @@ public class EnemyDeath : MonoBehaviour
             ObjectPoolManager.Return(died);
             Quaternion rotation = Quaternion.Euler(-90f, 0f, 0f);
 
-            Instantiate(Infection, transform.position, rotation);
+            GameObject newSystem = Instantiate(Infection, transform.position, rotation);
+            
         }
     }
 }
