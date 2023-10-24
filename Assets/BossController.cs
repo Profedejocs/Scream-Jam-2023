@@ -54,7 +54,11 @@ public class BossController : MonoBehaviour
         _cloudSmall2.transform.position = _cloudMain.transform.position + offset2;
     }
 
-    public void Despawn() { 
-        
+    public void Despawn() {
+        _cloudMain.GetComponent<ParticleSystem>().Stop();
+        _cloudSmall1.GetComponent<ParticleSystem>().Stop();
+        _cloudSmall2.GetComponent<ParticleSystem>().Stop();
+
+        Destroy(GetComponent<InfectionSource>());
     }
 }
