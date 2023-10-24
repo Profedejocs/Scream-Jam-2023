@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerLifeMonitor : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class PlayerLifeMonitor : MonoBehaviour
         if (died.gameObject == gameObject)
         {
             Debug.Log("Player has died!");
-            Time.timeScale = 0.0f; // TEMPORARY - Makes clear player is dead
+            SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
         }
     }
 }
