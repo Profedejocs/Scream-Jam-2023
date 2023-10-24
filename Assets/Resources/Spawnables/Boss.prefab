@@ -207,6 +207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7579752388134821003, guid: c0e3076db4481d74498a340a6d8013a3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7673646295866201123, guid: c0e3076db4481d74498a340a6d8013a3, type: 3}
       propertyPath: m_Name
       value: SporeFog
@@ -318,6 +322,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7579752388134821003, guid: c0e3076db4481d74498a340a6d8013a3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7673646295866201123, guid: c0e3076db4481d74498a340a6d8013a3, type: 3}
       propertyPath: m_Name
       value: CentralFog
@@ -411,6 +419,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6705017021165356499, guid: c0e3076db4481d74498a340a6d8013a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579752388134821003, guid: c0e3076db4481d74498a340a6d8013a3, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7673646295866201123, guid: c0e3076db4481d74498a340a6d8013a3, type: 3}

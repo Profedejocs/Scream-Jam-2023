@@ -7,6 +7,8 @@ using UnityEditor;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static PauseMenu instance { get; set; }
+
     GameObject pauseUI;
     GameObject background;
     GameObject settingUI;
@@ -15,6 +17,14 @@ public class PauseMenu : MonoBehaviour
     
     void Start()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else { 
+            instance = this;
+        }
+
         pauseUI = gameObject.transform.Find("Top").gameObject;
         pauseUI.SetActive(false);
         settingUI = gameObject.transform.Find("Settings").gameObject;
@@ -46,19 +56,20 @@ public class PauseMenu : MonoBehaviour
         settingUI.SetActive(false);
         background.SetActive(true);
         isPaused = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
     }
 
     public void resume()
     {
+        Debug.Log("here");
         Time.timeScale = 1;
         pauseUI.SetActive(false);
         settingUI.SetActive(false);
         background.SetActive(false);
         isPaused = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     public void settings()

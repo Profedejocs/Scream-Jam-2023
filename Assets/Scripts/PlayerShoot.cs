@@ -55,40 +55,44 @@ public class PlayerShoot : MonoBehaviour
 
     private void PointRifle()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2  direction = mousePos - (Vector2)_rifleObject.transform.position;
-        float angle;
-        float angle_offset;
-
-        if (transform.localScale.x > 0)
+        if (!PauseMenu.instance.isPaused)
         {
-            angle = Vector2.SignedAngle(Vector2.left, direction);
-            angle_offset = 4;
-        }
-        else
-        {
-            angle = Vector2.SignedAngle(Vector2.right, direction);
-            angle_offset = -4;
-        }
 
-        if (Mathf.Abs(angle) > 40)
-        {
-            _angleBlocked = true;
-            angle = -6 * angle_offset; // Rest pos
-        }
-        else
-            _angleBlocked = false;
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = mousePos - (Vector2)_rifleObject.transform.position;
+            float angle;
+            float angle_offset;
 
-        
-        Vector3 angles = _rifleObject.transform.eulerAngles;
-        angles.z = angle + angle_offset;
-        _rifleObject.transform.eulerAngles = angles;
+            if (transform.localScale.x > 0)
+            {
+                angle = Vector2.SignedAngle(Vector2.left, direction);
+                angle_offset = 4;
+            }
+            else
+            {
+                angle = Vector2.SignedAngle(Vector2.right, direction);
+                angle_offset = -4;
+            }
+
+            if (Mathf.Abs(angle) > 40)
+            {
+                _angleBlocked = true;
+                angle = -6 * angle_offset; // Rest pos
+            }
+            else
+                _angleBlocked = false;
+
+
+            Vector3 angles = _rifleObject.transform.eulerAngles;
+            angles.z = angle + angle_offset;
+            _rifleObject.transform.eulerAngles = angles;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && _canShoot && !_angleBlocked)
+        if (Input.GetButton("Fire1") && _canShoot && !_angleBlocked && !PauseMenu.instance.isPaused)
         {
             if (_rifleCooldown <= 0 && _rifleAmmo > 0)
             {
@@ -113,6 +117,8 @@ public class PlayerShoot : MonoBehaviour
 
     private bool Shoot()
     {
+        HUDController.instance.UpdateAmmo(_rifleAmmo);
+
         int targetMask = GameInfo.GroundLayerMask | GameInfo.TargetableLayerMask;
 
         Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - _rifleFirePoint.transform.position).normalized;
@@ -150,6 +156,7 @@ public class PlayerShoot : MonoBehaviour
     public void AddAmmo(int amount)
     {
         _rifleAmmo += amount;
+        HUDController.instance.UpdateAmmo(_rifleAmmo);
     }
 
     private void HideBulletLine()

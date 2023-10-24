@@ -30,6 +30,10 @@ public class Health : MonoBehaviour
                 GameObject.Find("MainCamera").GetComponent<Shaker>().Shake(DamageShake);
 
             _health -= damage;
+
+            if (gameObject.name.Equals("Character"))
+                HUDController.instance.UpdateDamage(_health);
+
             if (_health <= 0)
                 Die();
             _iFrameTime = iFrameTime;
