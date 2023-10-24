@@ -53,4 +53,8 @@ public class BossController : MonoBehaviour
         Vector3 offset2 = new Vector3(Mathf.Sin(_circle2CurAngle), Mathf.Cos(_circle2CurAngle), 0f) * _circleRad2;
         _cloudSmall2.transform.position = _cloudMain.transform.position + offset2;
     }
+
+    public void Despawn() { 
+        
+    }
 }
