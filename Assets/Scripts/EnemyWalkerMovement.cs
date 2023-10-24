@@ -38,6 +38,12 @@ public class EnemyWalkerMovement : MonoBehaviour
 
     private float _curSpeed = 0f;
 
+    private AudioSource _audioSource;
+
+    public AudioClip Clicking;
+    public AudioClip Idle;
+    public AudioClip PlayerSpotted;
+    public AudioClip Hurt;
 
     // Start is called before the first frame update
     void Start()
@@ -52,9 +58,34 @@ public class EnemyWalkerMovement : MonoBehaviour
         _leftBounds = transform.position.x - _pathOffset;
 
         _player = GameObject.Find("Character");
+        _audioSource = GetComponent<AudioSource>();
     }
 
+    private bool _playClick = true;
+    private float _playIdleSound = 5f;
     // Update is called once per frame
+    void Update()
+    {
+        if (_hasHiddenAggro && _hiddenAggroTriggered)
+        {
+            if (_playClick)
+                _audioSource.PlayOneShot(Clicking);
+            _playClick = false;
+
+        }
+
+        float dist = Vector2.Distance(transform.position, _player.transform.position);
+
+        if (((_hasHiddenAggro && _hiddenAggroTriggered) || _isAutoAggro || _isAggro) && dist < 10f)
+        {
+            _playIdleSound -= Time.deltaTime;
+            if (_playIdleSound <= 0)
+            {
+                _audioSource.PlayOneShot(PlayerSpotted);
+                _playIdleSound = 5f;
+            }
+        }
+    }
     void FixedUpdate()
     {
         if (!_hasHiddenAggro && !_isAutoAggro && !_isAggro && Vector3.Distance(transform.position, _player.transform.position) <= _aggroRange)
